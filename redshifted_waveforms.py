@@ -109,16 +109,6 @@ def source_frame_fd(**kwargs):
 	return hp_det, hc_det
 
 
-# Register SourceFrameTD/SourceFrameFD for use in PyCBC
-if False:
-    waveform.add_custom_waveform(
-        _TD_APPROXIMANT_NAME, source_frame_td, "time", force=False
-    )
-    waveform.add_custom_waveform(
-        _FD_APPROXIMANT_NAME, source_frame_fd, "frequency", force=False
-    )
-
-
 __all__ = [
 	"source_frame_td",
 	"source_frame_fd",
