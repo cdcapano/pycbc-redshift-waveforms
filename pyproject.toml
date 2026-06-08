@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pycbc-redshift-waveforms"
+version = "0.1.0"
+description = "PyCBC waveform plugin that generates source-frame waveforms and redshifts them to the detector frame"
+requires-python = ">=3.9"
+dependencies = ["pycbc"]
+
+[project.entry-points."pycbc.waveform.td"]
+SourceFrameTD = "redshifted_waveforms:source_frame_td"
+
+[project.entry-points."pycbc.waveform.fd"]
+SourceFrameFD = "redshifted_waveforms:source_frame_fd"
+
+[tool.setuptools]
+py-modules = ["redshifted_waveforms"]
